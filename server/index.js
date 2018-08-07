@@ -79,6 +79,18 @@ if (config.dev) {
 // Give nuxt middleware to express
 server.use(nuxt.render)
 
+// Gritty and Socket.io part
+const http = require('http')
+const gritty = require('gritty')
+const io = require('socket.io')
+ 
+const httpServer = http.createServer(server)
+const socket = io.listen(httpServer)
+ 
+server.use(gritty())
+ 
+gritty.listen(socket)
+
 // Listen the server
-server.listen(port, host)
+httpServer.listen(port, host)
 console.log('Server listening on ' + host + ':' + port) // eslint-disable-line no-console
