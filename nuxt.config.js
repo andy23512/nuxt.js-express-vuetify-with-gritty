@@ -24,6 +24,7 @@ module.exports = {
   build: {
     vendor: ['axios'],
     vendor: ['vuetify'],
+    vendor: ['gritty/dist-dev/gritty.js'],
     extractCSS: true,
     /*
     ** Run ESLINT on save

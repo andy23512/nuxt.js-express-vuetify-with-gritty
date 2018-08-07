@@ -1,22 +1,40 @@
 <template>
-  <div class="container">    
-    <div v-if="!$store.state.authUser">
-      <p><a href="/auth/strava">Log in with Strava</a></p>
-    </div>
-    <div v-else>
-      <p><a href="/logout">Log out</a></p>
-    </div>
-    <h1>Please login to acess the <nuxt-link to="/user">user</nuxt-link> page</h1>
-  </div>
+  <section class="container">
+    <div class="gritty"></div>
+  </section>
 </template>
 
 <script>
-  export default {
+export default {
+  mounted () {
+    if (process.browser) {
+      const gritty = require('gritty/dist-dev/gritty.js')
+      debugger  // eslint-disable-line
+      const prefix = '/gritty' // default
+      const env = {} // default
+      const fontFamily = 'Courier' // default
+
+      gritty('.gritty', {
+        prefix,
+        env,
+        fontFamily
+      })
+    }
   }
+}
 </script>
 
-<style scoped>
+<style>
 .container {
-  padding: 100px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.gritty {
+  height: 100%;
 }
 </style>
+
