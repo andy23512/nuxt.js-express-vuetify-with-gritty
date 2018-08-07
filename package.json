@@ -5,6 +5,7 @@
   "author": "Danijel Martinek <danijel.martinek.4@gmail.com>",
   "private": true,
   "scripts": {
+    "postinstall": "patch -p0 < gritty.patch",
     "dev": "backpack dev",
     "build": "nuxt build && backpack build",
     "start": "cross-env NODE_ENV=production node build/main.js",
@@ -15,6 +16,7 @@
     "axios": "^0.16.2",
     "cross-env": "^5.0.1",
     "express": "^4.15.3",
+    "gritty": "^3.0.1",
     "nuxt": "^1.0.0-rc3",
     "nuxt-oauth": "^0.0.2",
     "source-map-support": "^0.4.15",
