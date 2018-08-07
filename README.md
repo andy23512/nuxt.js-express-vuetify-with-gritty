@@ -4,6 +4,17 @@
 
 <p align="center"><img src="https://github.com/danijelmartinek/nuxt.js-express-vuetify/blob/master/assets/img/nuxtexpressvuetify.png"></p>
 
+## Modified Files
+- gritty.patch    # to patch gritty frontend.js, make it can be required via webpack
+- nuxt.config.js  # add gritty vender
+- pages/index.vue # main page (where gritty vender is included)
+  - Reference:
+    - [gritty client api](https://www.npmjs.com/package/gritty#client-api)
+- server/index.js     # socket.io with gritter server side configuration
+  - Reference:
+    - [gritty usage as middleware](https://www.npmjs.com/package/gritty#usage-as-middleware)
+- package.json    # add postinstall command and gritty module
+
 ## Build Setup
 
 ``` bash
